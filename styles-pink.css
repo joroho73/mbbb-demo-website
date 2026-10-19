@@ -356,6 +356,14 @@ h1 em,h2 em {
   color:var(--muted);
   font-size:14px
 }
+.gig-card p + p {
+  margin-top: 8px;
+}
+
+.gig-card .text-link {
+  display: inline-block;
+  margin-top: 12px;
+}
 .circle-arrow {
   width:43px;
   height:43px;
