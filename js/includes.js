@@ -1,3 +1,4 @@
+// This script dynamically loads the header and footer includes into the page.
 async function loadIncludes() {
   const includes = [
     ["#site-header", "/includes/header.html"],
@@ -25,4 +26,21 @@ async function loadIncludes() {
   }
 }
 
-loadIncludes();
+// Menu toggle functionality
+async function setupMenuToggle() {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const siteHeader = document.querySelector(".site-header");
+
+  if (!menuToggle || !siteHeader) {
+    console.error("Menu button or site header not found.");
+    return;
+  }
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = siteHeader.classList.toggle("menu-open");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+    menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  });
+}
+
+loadIncludes().then(setupMenuToggle)
