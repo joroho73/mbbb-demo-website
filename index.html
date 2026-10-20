@@ -1,18 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The Melvin Beddow Big Band — live swing, jazz, jive and more across Essex. View upcoming performances and enquire about bookings.">
+  
   <title>Melvin Beddow Big Band | Live Big Band Music</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/menu-styles.css">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.1/dist/js-yaml.min.js"></script>
+  <script defer src="/js/featured-testimonials.js"></script>
+
 </head>
+
 <body>
-<div id="site-header"></div>
+
+  <div id="site-header"></div>
 
   <main>
     <section class="hero" id="home" aria-labelledby="hero-title">
@@ -97,17 +106,40 @@
       </div>
     </section>
 
-    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
+    <section class="testimonials" id="testimonials"
+            aria-labelledby="testimonials-title">
       <div class="testimonial-image">
-        <img src="assets/vocalists.jpg" alt="The Melvin Beddow Big Band vocalists performing" width="980" height="304">
+        <img src="/assets/vocalists.jpg"
+            alt="The Melvin Beddow Big Band vocalists performing"
+            width="980" height="304">
       </div>
+
       <div class="testimonial-copy">
         <p class="eyebrow">What audiences say</p>
         <h2 id="testimonials-title">A night to<br><em>remember.</em></h2>
-        <blockquote>
-          <p>“The band were just what we wanted, just right, excellent, tight playing, beyond expectation!”</p>
-        </blockquote>
-        <p class="testimonial-note">More audience stories coming soon.</p>
+
+        <div id="featured-testimonial" hidden>
+          <blockquote>
+            <p>
+              <span id="featured-testimonial-text"></span>
+              <a id="featured-testimonial-link"
+                class="testimonial-read-more">
+                Read the full testimonial →
+              </a>
+            </p>
+          </blockquote>
+
+          <p class="testimonial-attribution"
+            id="featured-testimonial-reviewer"></p>
+        </div>
+
+        <p class="testimonial-note">
+          <a href="/testimonials/">View all testimonials →</a>
+        </p>
+
+        <button type="button" id="testimonial-pause" hidden>
+          Pause testimonials
+        </button>
       </div>
     </section>
 
@@ -137,10 +169,9 @@
     </section>
   </main>
 
+  <div id="site-footer"></div>
 
-<div id="site-footer"></div>
-
-<script src="/js/includes.js"></script>
+  <script src="/js/includes.js"></script>
 
 </body>
 </html>

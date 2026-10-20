@@ -367,17 +367,21 @@ h1 em,h2 em {
   font-size:clamp(23px,2.2vw,34px);
   line-height:1.45
 }
+.testimonial-copy .testimonial-read-more {
+  display: inline;
+  margin-left: 0.3em;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-style: normal;
+  color: var(--highlight);
+  text-decoration: none;
+}
+
 .testimonial-note {
   font-size:10px;
   text-transform:uppercase;
   letter-spacing:.17em;
   margin-top:25px
-}
-
-.testimonials-page {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 32px 24px 64px;
 }
 
 .testimonial-list {
@@ -386,6 +390,9 @@ h1 em,h2 em {
 
 /* testamonials page  */
 .testimonials-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
   padding-bottom: 40px;
 }
 
@@ -449,6 +456,53 @@ h1 em,h2 em {
 .testimonial {
   padding: 28px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+/* Keep linked testimonials below the sticky header. */
+.testimonial[id] {
+  scroll-margin-top: 110px;
+}
+#testimonial-pause:hover
+/* Highlight the testimonial selected through a direct link. */
+.testimonial:target .testimonial-attribution {
+  text-decoration: none;
+}
+
+/* Homepage rotation control. */
+#testimonial-pause {
+  margin-top: 0.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--paper);
+  font: inherit;
+  font-size: 0.875rem;
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+#testimonial-pause:hover,
+#testimonial-pause:focus-visible {
+  background: transparent;
+  color: var(--highlight-soft);
+  opacity: 1;
+  visibility: visible;
+}
+
+#testimonial-pause:focus-visible {
+  outline: 2px solid var(--highlight-soft);
+  outline-offset: 5px;
+}
+
+/* Light text against the homepage's coloured background. */
+.testimonial-copy .testimonial-read-more,
+.testimonial-copy .testimonial-attribution {
+  color: var(--paper);
+}
+
+.testimonial-copy .testimonial-read-more:hover {
+  color: white;
 }
 
 .enquiries {

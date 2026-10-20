@@ -55,7 +55,10 @@ async function loadTestimonials() {
           }
         }
 
-        return review;
+        return {
+        ...review,
+        anchor: filename.replace(/\.ya?ml$/i, "")
+        };
       })
     );
 
@@ -67,6 +70,7 @@ async function loadTestimonials() {
     )) {
       const article = document.createElement("article");
       article.className = "testimonial";
+      article.id = review.anchor;
 
       const blockquote = document.createElement("blockquote");
 
@@ -109,6 +113,19 @@ async function loadTestimonials() {
     }
 
     container.replaceChildren(fragment);
+
+    // The testimonials load asynchronously, so scroll after they exist.
+    if (window.location.hash) {
+        const anchor = decodeURIComponent(window.location.hash.slice(1));
+        const target = document.getElementById(anchor);
+
+        if (target) {
+            requestAnimationFrame(() => {
+            target.scrollIntoView({ block: "start" });
+            });
+        }
+    }
+
   } catch (error) {
     console.error("Could not load testimonials:", error);
 
