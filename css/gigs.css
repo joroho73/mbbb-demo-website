@@ -1,0 +1,119 @@
+/* Gigs */
+.gigs {
+  display: grid;
+  grid-template-columns: .78fr 1.22fr;
+  gap: 9vw;
+  padding: clamp(80px, 11vw, 150px) clamp(25px, 8vw, 120px);
+}
+
+.gigs-intro > p:not(.eyebrow):not(.action-row) {
+  color: var(--muted);
+  max-width: 380px;
+}
+
+.gig-card {
+  display: grid;
+  grid-template-columns: 90px 1fr 48px;
+  align-items: center;
+  gap: 25px;
+  padding: 27px 0;
+  border-top: 1px solid var(--line);
+}
+
+.gig-card:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.gig-card time strong {
+  display: block;
+  color: var(--highlight);
+  font-family: var(--serif);
+  font-size: 58px;
+  font-weight: 500;
+  line-height: .8;
+}
+
+.gig-card time span {
+  display: block;
+  margin-top: 11px;
+  font-size: var(--text-small);
+  line-height: 1.5;
+}
+
+.gig-card h3 {
+  font-family: var(--serif);
+  font-size: 25px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.gig-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--text-small);
+}
+
+.gig-card p + p {
+  margin-top: 8px;
+}
+
+.gig-card .text-link {
+  margin-top: 12px;
+}
+
+/* Dedicated gig page */
+
+.gigs-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 40px;
+}
+
+  .gig-card {
+    grid-template-columns: 67px 1fr;
+    gap: 17px;
+  }
+
+  .gig-card time strong {
+    font-size: 48px;
+  }
+
+  .gig-card .circle-arrow {
+    grid-column: 2;
+  }
+
+  .gig-card span.circle-arrow {
+    display: none;
+  }
+
+  .gig-card--full {
+  grid-template-columns: 90px minmax(0, 1fr);
+  align-items: start;
+}
+
+.gig-card--full[id] {
+  scroll-margin-top: 18px;
+}
+
+.gig-description p + p {
+  margin-top: 1em;
+}
+
+.gig-card .gig-venue {
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.gig-card .gig-start-time {
+  color: var(--highlight-soft);
+}
+
+@media (max-width: 620px) {
+  .gig-card--full {
+    grid-template-columns: 67px minmax(0, 1fr);
+  }
+}
+
+.gig-ticket-button {
+  margin-top: 16px;
+}

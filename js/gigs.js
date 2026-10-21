@@ -193,8 +193,26 @@
       createElement("p", "gig-start-time", gig.start_time)
     );
 
-    if (gig.location && gig.location !== gig.venue) {
-      details.append(createElement("p", "gig-location", gig.location));
+    if (gig.location) {
+      const address = createElement("p", "gig-location");
+      const mapLink = createElement("a", "gig-map-link");
+
+      mapLink.href =
+        `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(gig.location)}`;
+      mapLink.target = "_blank";
+      mapLink.rel = "noopener noreferrer";
+      mapLink.setAttribute(
+        "aria-label",
+        `${gig.location} — view on Google Maps (opens in a new tab)`
+      );
+
+      const text = createElement("span", "", gig.location);
+      const icon = createElement("span", "gig-map-icon", " ↗");
+      icon.setAttribute("aria-hidden", "true");
+
+      mapLink.append(text, icon);
+      address.append(mapLink);
+      details.append(address);
     }
 
     if (gig.description) {
@@ -212,18 +230,22 @@
     }
 
     if (gig.running_time) {
-      details.append(createElement("p", "", gig.running_time));
+      details.append(createElement("p", "gig-running-time", gig.running_time));
     }
 
     if (gig.ticket_price) {
       details.append(
-        createElement("p", "", `Tickets: ${gig.ticket_price}`)
+        createElement("p", "gig-price", `Tickets: ${gig.ticket_price}`)
       );
     }
 
     // Keep historical details, but do not promote expired ticket links.
     if (gig.ticket_url && !isPast) {
-      const link = createElement("a", "text-link", "Book tickets ");
+      const link = createElement(
+        "a",
+        "button button-highlight gig-ticket-button",
+        "Book tickets "
+      );
       link.href = gig.ticket_url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
