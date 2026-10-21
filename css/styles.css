@@ -630,8 +630,14 @@ a.circle-arrow:focus-visible {
 }
 
 .testimonial-list {
-  max-width: 900px;
+  max-width: 850px;
   margin: 0 auto;
+}
+
+.testimonial blockquote {
+  margin: 0;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
 }
 
 .testimonial {

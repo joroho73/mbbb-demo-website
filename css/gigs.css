@@ -69,51 +69,194 @@
   padding: 32px 24px 40px;
 }
 
-  .gig-card {
-    grid-template-columns: 67px 1fr;
-    gap: 17px;
-  }
-
-  .gig-card time strong {
-    font-size: 48px;
-  }
-
-  .gig-card .circle-arrow {
-    grid-column: 2;
-  }
-
-  .gig-card span.circle-arrow {
-    display: none;
-  }
-
-  .gig-card--full {
-  grid-template-columns: 90px minmax(0, 1fr);
-  align-items: start;
+ .gig-card {
+  grid-template-columns: 67px 1fr;
+  gap: 17px;
 }
 
-.gig-card--full[id] {
-  scroll-margin-top: 18px;
+.gig-card time strong {
+  font-size: 48px;
 }
 
-.gig-description p + p {
-  margin-top: 1em;
+.gig-card .circle-arrow {
+  grid-column: 2;
 }
 
-.gig-card .gig-venue {
-  color: var(--paper);
-  font-weight: 600;
+.gig-card span.circle-arrow {
+  display: none;
 }
 
-.gig-card .gig-start-time {
+/* Keep grid content inside its column. */
+.gig-list,
+.gig-card > div {
+  min-width: 0;
+}
+
+/* Homepage: date, information and arrow share one row. */
+#homepage-gigs .gig-card {
+  grid-template-columns: 80px minmax(0, 1fr) 44px;
+  gap: 20px;
+}
+
+#homepage-gigs .circle-arrow {
+  grid-column: 3;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+}
+
+#homepage-gigs .gig-card time span {
+  white-space: nowrap;
+}
+
+#homepage-gigs .gig-card h3 a:hover,
+#homepage-gigs .gig-card h3 a:focus-visible {
   color: var(--highlight-soft);
 }
 
-@media (max-width: 620px) {
-  .gig-card--full {
-    grid-template-columns: 67px minmax(0, 1fr);
+/* Dedicated gigs page: headings above wider listings. */
+.gigs-listing-page .gigs {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 32px;
+  grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr);
+  align-items: start;
+  gap: 48px;
+}
+
+.gigs-listing-page .gigs-intro .eyebrow {
+  margin-bottom: 12px;
+}
+
+.gigs-listing-page .gigs-intro h2 {
+  margin: 0;
+  font-size: clamp(36px, 3.5vw, 50px);
+  line-height: 1.08;
+}
+
+.gigs-listing-page .gig-card--full {
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 28px;
+  padding: 28px 0;
+}
+
+.gigs-listing-page .gig-list > .gig-card:first-child {
+  border-top: 0;
+}
+
+.gigs-listing-page .gig-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Distinguish practical details from the description. */
+.gig-card p.gig-location {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, .05);
+}
+
+.gig-map-link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.gig-map-link > span:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.gig-map-icon {
+  flex-shrink: 0;
+  color: var(--highlight-soft);
+}
+
+.gig-map-link:hover {
+  color: var(--highlight-soft);
+}
+
+.gig-description {
+  margin-top: 20px;
+}
+
+.gig-card .gig-description p {
+  color: var(--paper);
+}
+
+.gig-card p.gig-running-time {
+  margin-top: 20px;
+}
+
+.gig-card p.gig-price {
+  margin-top: 16px;
+  color: var(--highlight-soft);
+  font-weight: 700;
+}
+
+.gig-card p.gig-ticket-status {
+  margin-top: 16px;
+}
+
+/* Responsive layouts belong in the gigs stylesheet. */
+@media (max-width: 950px) {
+  .gigs {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
   }
 }
 
-.gig-ticket-button {
-  margin-top: 16px;
+@media (max-width: 620px) {
+  .gigs {
+    padding-inline: 24px;
+  }
+
+  #homepage-gigs .gig-card {
+    grid-template-columns: 60px minmax(0, 1fr) 44px;
+    gap: 12px;
+  }
+
+  #homepage-gigs .gig-card time strong {
+    font-size: 42px;
+  }
+
+  #homepage-gigs .gig-card time span {
+    white-space: normal;
+  }
+
+  #homepage-gigs .gig-card h3 {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .gigs-listing-page .gigs {
+    padding: 32px 24px 40px;
+  }
+
+  .gigs-listing-page .gig-card--full {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .gigs-listing-page .gig-card time strong {
+    font-size: 42px;
+  }
+}
+
+/* Align the date with the gig title on the full listings. */
+.gigs-listing-page .gig-card--full {
+  align-items: start;
+}
+
+.gigs-listing-page .gig-card--full > time {
+  align-self: start;
+  padding-top: 6px;
+}
+
+/* Leave clear space between ticket information and the button. */
+.gigs-listing-page .gig-card--full a.gig-ticket-button {
+  display: inline-flex;
+  margin-top: 24px;
 }

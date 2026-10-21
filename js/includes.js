@@ -51,4 +51,43 @@ async function setupMenuToggle() {
 });
 }
 
-loadIncludes().then(setupMenuToggle)
+function updateActiveNavigation() {
+  const normalisePath = path =>
+    path.replace(/\/index\.html$/, "/").replace(/\/+$/, "") || "/";
+
+  const currentPath = normalisePath(window.location.pathname);
+  const currentHash = window.location.hash;
+
+  document.querySelectorAll(".site-header nav a").forEach(link => {
+    const destination = new URL(link.href, window.location.href);
+
+    link.removeAttribute("aria-current");
+
+    if (
+      destination.origin !== window.location.origin ||
+      normalisePath(destination.pathname) !== currentPath
+    ) {
+      return;
+    }
+
+    if (destination.hash) {
+      if (destination.hash === currentHash) {
+        link.setAttribute("aria-current", "location");
+      }
+    } else if (
+      currentPath !== "/" ||
+      !currentHash ||
+      currentHash === "#top" ||
+      currentHash === "#home"
+    ) {
+      link.setAttribute("aria-current", "page");
+    }
+  });
+}
+
+loadIncludes().then(() => {
+  setupMenuToggle();
+  updateActiveNavigation();
+});
+
+window.addEventListener("hashchange", updateActiveNavigation);

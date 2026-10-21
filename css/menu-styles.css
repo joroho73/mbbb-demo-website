@@ -43,6 +43,13 @@
   color: var(--highlight);
 }
 
+.site-header nav a[aria-current] {
+  color: var(--highlight-soft);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 6px;
+}
+
 .header-cta {
   display: inline-flex;
   align-items: center;
