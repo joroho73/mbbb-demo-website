@@ -29,6 +29,9 @@ rsync -avz \
     --exclude 'deploy-command.txt' \
     --exclude 'README.md' \
     --exclude 'page-template.html' \
+    --exclude='server/' \
+    --exclude='*.env' \
+    --exclude='__pycache__/' \
     ./ "$REMOTE:$REMOTE_DIR"
 
 echo

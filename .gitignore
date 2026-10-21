@@ -13,3 +13,7 @@ desktop.ini
 *.tmp
 *.bak
 *~
+
+# Email handler
+*.env
+__pycache__/
