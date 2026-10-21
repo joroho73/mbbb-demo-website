@@ -3,23 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Melvin Beddow Big Band">
+
+  <!-- Update for each page -->
   <title>Page title | Melvin Beddow Big Band</title>
+  <meta name="description" content="Add a short description of this page.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles-pink.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/menu-styles.css">
+
+  <script defer src="/js/includes.js"></script>
 </head>
-<body>
+
+<body id="top">
   <div id="site-header"></div>
 
-  <main id="main-content">
-    <!-- Add this page's content here -->
+  <main>
+    <section class="page-header" aria-labelledby="page-title">
+      <p class="eyebrow">Useful information</p>
+      <h1 id="page-title">Page title</h1>
+      <p class="page-intro">
+        Add a short introduction to this page.
+      </p>
+    </section>
+
+    <hr class="page-divider">
+
+    <div class="page-content">
+      <h2>Section heading</h2>
+      <p>
+        Add your page content here.
+      </p>
+
+      <h2>Another section</h2>
+      <p>
+        Add further information here.
+      </p>
+    </div>
   </main>
 
   <div id="site-footer"></div>
-
-  <script src="/js/includes.js"></script>
 </body>
 </html>
