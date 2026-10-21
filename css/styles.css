@@ -1089,3 +1089,54 @@ footer {
     grid-template-columns: 67px minmax(0, 1fr);
   }
 }
+
+/* Give the hero heading more room at intermediate desktop widths. */
+@media (min-width: 951px) and (max-width: 1400px) {
+  .hero-copy {
+    padding-inline: 36px;
+  }
+
+  .hero h1 {
+    font-size: clamp(58px, 5.3vw, 74px);
+    line-height: 1.04;
+  }
+}
+
+/* Improve readability of small accent text on dark backgrounds. */
+.eyebrow.highlight,
+.page-header > .eyebrow {
+  color: var(--highlight-soft);
+}
+
+.testimonial-attribution,
+.attribution {
+  --attribution-color: var(--highlight-soft);
+}
+
+/* Keep attribution readable on the homepage's pink background. */
+.surface-accent .testimonial-attribution,
+.surface-accent .attribution {
+  --attribution-color: var(--paper);
+}
+
+/* More compact gig listings on the dedicated gigs page. */
+.gigs-listing-page .gigs {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 48px 32px;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  gap: 48px;
+}
+
+.gigs-listing-page .gigs-intro .section-title {
+  font-size: clamp(36px, 3.5vw, 52px);
+  line-height: 1.08;
+}
+
+@media (max-width: 950px) {
+  .gigs-listing-page .gigs {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 36px 24px;
+  }
+}

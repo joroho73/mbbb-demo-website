@@ -145,3 +145,22 @@
     transform: translateY(-7px) rotate(-45deg);
   }
 }
+
+/* A clearer primary booking action; retain uppercase typography. */
+.site-header .header-cta {
+  background: var(--highlight-soft);
+  color: var(--ink);
+  border: 1px solid var(--highlight-soft);
+  font-weight: 700;
+}
+
+.site-header .header-cta:hover {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+}
+
+.site-header .header-cta:focus-visible {
+  outline: 2px solid var(--paper);
+  outline-offset: 4px;
+}
