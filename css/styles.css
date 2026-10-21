@@ -843,6 +843,9 @@ a.circle-arrow:focus-visible {
 #enquiry-status:empty {
   display: none;
 }
+#enquiry-status.is-success {
+  color: var(--highlight);
+}
 
 /* Footer — navigation header remains in menu-styles.css */
 footer {

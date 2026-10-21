@@ -11,6 +11,7 @@
     sending = true;
     button.disabled = true;
     form.setAttribute("aria-busy", "true");
+    status.classList.remove("is-success");
     status.textContent = "Sending your enquiry…";
 
     try {
@@ -24,6 +25,8 @@
         throw new Error(result.message || "Your enquiry could not be sent.");
       }
       status.textContent = result.message;
+      status.classList.add("is-success");
+      form.reset();
       form.reset();
     } catch (error) {
       status.textContent = error instanceof SyntaxError || error instanceof TypeError
