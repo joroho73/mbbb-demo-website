@@ -24,8 +24,11 @@ rsync -avz \
     --exclude '.gitignore' \
     --exclude '.vscode/' \
     --exclude '*:Zone.Identifier' \
+    --exclude '*.bak' \
     --exclude 'deploy.sh' \
+    --exclude 'deploy-command.txt' \
     --exclude 'README.md' \
+    --exclude 'page-template.html' \
     ./ "$REMOTE:$REMOTE_DIR"
 
 echo
