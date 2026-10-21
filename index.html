@@ -16,9 +16,10 @@
 
   <script defer src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.1/dist/js-yaml.min.js"></script>
   <script defer src="/js/featured-testimonials.js"></script>
+  <script defer src="/js/gigs.js"></script>
 </head>
 
-<body>
+<body id="top">
   <div id="site-header"></div>
 
   <main>
@@ -129,7 +130,7 @@
       <div class="gigs-intro">
         <p class="eyebrow highlight">On stage next</p>
         <h2 class="section-title" id="gigs-title">
-          Three dates<br><em>for your diary.</em>
+          Dates<br><em>for your diary.</em>
         </h2>
 
         <p>Come and hear the band live. More dates will be announced soon.</p>
@@ -141,44 +142,8 @@
         </p>
       </div>
 
-      <div class="gig-list">
-        <article class="gig-card">
-          <time datetime="2026-11-22">
-            <strong>22</strong>
-            <span>Nov · 2026</span>
-          </time>
-          <div>
-            <h3>End of Year Concert</h3>
-            <p>Brentwood Theatre · 3:00pm</p>
-          </div>
-          <span class="circle-arrow" aria-hidden="true">↗</span>
-        </article>
-
-        <article class="gig-card">
-          <time datetime="2026-12-12T19:30">
-            <strong>12</strong>
-            <span>Dec · 2026</span>
-          </time>
-          <div>
-            <h3>Christmas Dance</h3>
-            <p>Runnymede Hall, Thundersley · 7:30pm</p>
-          </div>
-          <span class="circle-arrow" aria-hidden="true">↗</span>
-        </article>
-
-        <article class="gig-card">
-          <time datetime="2026-12-15T20:00">
-            <strong>15</strong>
-            <span>Dec · 2026</span>
-          </time>
-          <div>
-            <h3>Christmas Special</h3>
-            <p>Annie’s Jazz Club, Westcliff · 8:00pm</p>
-          </div>
-          <a class="circle-arrow"
-             href="https://www.anniesjazz.co.uk/events/melvin-beddow-big-band-christmas-special"
-             aria-label="View tickets for the Christmas Special">↗</a>
-        </article>
+      <div class="gig-list" id="homepage-gigs">
+        <p>Loading upcoming performances…</p>
       </div>
     </section>
 

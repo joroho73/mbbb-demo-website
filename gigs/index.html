@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Melvin Beddow Big Band">
+  
   <title>Gigs | Melvin Beddow Big Band</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,92 +13,61 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="/css/menu-styles.css">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.1/dist/js-yaml.min.js"></script>
+  <script defer src="/js/gigs.js"></script>
+
 </head>
-<body>
+<body id="top">
   <div id="site-header"></div>
 
   <main id="main-content">
 
-
-      <div class="gig-list">
-        <!-- Future gig cards go here -->
-      </div>
+    <section class="page-header" aria-labelledby="page-title">
+      <p class="eyebrow">Where to catch us</p>
+      <h1 id="page-title">Gigs</h1>
+      <p class="page-intro">
+        Come and see the Melvin Beddow Big Band live at one of our
+        upcoming performances.
+      </p>
     </section>
-    
+
+    <hr class="page-divider">
+
     <section class="gigs" aria-labelledby="upcoming-title">
       <div class="gigs-intro">
         <p class="eyebrow">Coming up</p>
-        <h2 id="upcoming-title">Upcoming<br><em>performances.</em></h2>
+        <h2 class="section-title section-title--compact" id="upcoming-title">
+          Upcoming<br><em>performances.</em>
+        </h2>
       </div>
-      <div class="gig-list">
-        <!-- Future gig cards go here -->
 
-        <article class="gig-card">
-          <time datetime="2026-11-22T15:00">
-            <strong>22</strong>
-            <span>Nov · 2026</span>
-          </time>
-
-          <div>
-            <h3>End of Year Concert</h3>
-            <p>Brentwood Theatre, Brentwood, CM15 8AG</p>
-            <p>Come and join the Melvin Beddow Big Band for their live big band concert.</p>
-            <p>Approx. running time: 2 hours, including a 20-minute interval.</p>
-            <p>Tickets: £16.04–£19.24, including booking fee.</p>
-            <a class="text-link" target="_blank" href="https://www.ticketsource.com/brentwoodtheatre/t-vxzxpzo">
-              Book tickets <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
-
-        <article class="gig-card">
-          <time datetime="2026-11-22T15:00">
-            <strong>12</strong>
-            <span>Dec · 2026</span>
-          </time>
-
-          <div>
-            <h3>Christmas Dance</h3>
-            <p>Runnymead Hall, Thundersly, SS7 1TF</p>
-            <p>Tom Overington presents Melvin Beddow Big Band Christmas Dance 2026.</p>
-            <p>Approx. running time: 2 hours, including a 20-minute interval.</p>
-            <p>Tickets: £18 online, £20 at the door.</p>
-            <a class="text-link" target="_blank" href="https://www.eventbrite.co.uk/e/melvin-beddow-big-band-christmas-dance-2026-tickets-2002039981478">
-              Book tickets <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </article>
-  
+      <div class="gig-list" id="upcoming-gigs">
+        <p>Loading upcoming performances…</p>
       </div>
     </section>
 
-
+    <hr class="page-divider-white">
 
     <section class="gigs" aria-labelledby="past-title">
       <div class="gigs-intro">
         <p class="eyebrow">From the archive</p>
-        <h2 id="past-title">Past<br><em>performances.</em></h2>
+        <h2 class="section-title section-title--compact" id="past-title">
+          Past<br><em>performances.</em>
+        </h2>
       </div>
-      <div class="gig-list">
-        <!-- Past gig cards go here -->
 
-        <article class="gig-card">
-          <time datetime="2026-05-25T13:00">
-            <strong>25</strong>
-            <span>May · 2026</span>
-          </time>
-
-          <div>
-            <h3>Ingatestone Beer Festival at the Viper</h3>
-            <p>The Viper, Mill Green Road, Ingatestone, CM4 0PT</p>
-            <p>Melvin Beddow Big Band Play the Viper.</p>
-            <p>Approx. running time: Two hour long sets staring at 2:15.</p>
-            <p>Tickets: Free!</p>
-          </div>
-        </article>
-
+      <div class="gig-list" id="past-gigs">
+        <p>Loading past performances…</p>
       </div>
     </section>
+
+    <noscript>
+      <p class="page-content">
+        Please enable JavaScript to view performance listings, or
+        <a href="mailto:enquiries@mbbb.co.uk">contact us for upcoming dates</a>.
+      </p>
+    </noscript>
 
   </main>
 

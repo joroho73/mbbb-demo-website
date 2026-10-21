@@ -419,6 +419,84 @@ h2 em,
   color: var(--muted);
 }
 
+/* Shared introduction accent for inner pages */
+/* Shared inner-page heading */
+.page-header {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 40px;
+}
+
+.page-header > .eyebrow {
+  color: var(--highlight-soft);
+  margin-bottom: 16px;
+}
+
+.page-intro {
+  max-width: 700px;
+  margin: 0;
+  color: var(--muted);
+}
+
+/* Wide divider below the page introduction */
+.page-divider {
+  width: 60%;
+  max-width: 900px;
+  height: 1px;
+  margin: 0 auto;
+  border: 0;
+  background: var(--highlight);
+}
+
+.page-divider-white {
+  width: 60%;
+  max-width: 900px;
+  height: 1px;
+  margin: 0 auto;
+  border: 0;
+  background: var(--paper);
+}
+
+/* General text pages, including privacy and terms */
+.page-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+.page-content h2 {
+  margin: 40px 0 18px;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.2;
+}
+
+.page-content h2:first-child {
+  margin-top: 0;
+}
+
+.page-content h3 {
+  margin: 28px 0 12px;
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.page-content p,
+.page-content li {
+  line-height: 1.75;
+}
+
+.page-content a {
+  color: var(--highlight-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.page-content a:hover {
+  color: var(--paper);
+}
+
 /* Music */
 .sound {
   display: grid;
@@ -536,6 +614,20 @@ h2 em,
   margin-top: 12px;
 }
 
+/* Dedicated gig page */
+
+.gigs-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 40px;
+}
+
+.page-intro {
+  max-width: 700px;
+  margin: 0;
+  color: var(--muted);
+}
+
 .circle-arrow {
   width: 43px;
   height: 43px;
@@ -605,17 +697,6 @@ a.circle-arrow:focus-visible {
 .testimonials-section {
   position: relative;
   padding: 32px 24px 64px;
-}
-
-.testimonials-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: min(60%, 900px);
-  height: 1px;
-  background: var(--highlight);
-  transform: translateX(-50%);
 }
 
 .testimonial-list {
@@ -959,5 +1040,33 @@ footer {
   .button:hover,
   .button:focus-visible {
     transform: none;
+  }
+}
+
+.gig-card--full {
+  grid-template-columns: 90px minmax(0, 1fr);
+  align-items: start;
+}
+
+.gig-card--full[id] {
+  scroll-margin-top: 18px;
+}
+
+.gig-description p + p {
+  margin-top: 1em;
+}
+
+.gig-card .gig-venue {
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.gig-card .gig-start-time {
+  color: var(--highlight-soft);
+}
+
+@media (max-width: 620px) {
+  .gig-card--full {
+    grid-template-columns: 67px minmax(0, 1fr);
   }
 }

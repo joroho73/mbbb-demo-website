@@ -1,10 +1,15 @@
 title: "End of Year Concert"
 date: "2026-11-22"
-start_time: "15:00"
-venue: "Brentwood Theatre"
-location: "Brentwood Theatre, Brentwood, CM15 8AG"
-running_time: "Approx Running Time - 2hrs (including 20 min interval)"
-description: "Come and join the Melvin Beddow Big Band For their live big band in concert show."
-ticket_url: "https://www.ticketsource.com/brentwoodtheatre/t-vxzxpzo"
-ticket_price: "£16.04 - £19.24 including booking fee"
+start_time: "Doors open at 19.15, music at 19.45"
+venue: "Runnymead Hall"
+location: "Runnymead Hall, Thundersly, SS7 1TF"
+running_time: "Approximately 3 hours including interval"
+description: |- 
+  Get ready to jingle, mingle and dance the night away to your favourite ballroom, latin and rock 'n roll tunes. 
+
+  This wonderful live band and singers, back by popular demand, are sounding better than ever! We have an exciting evening planned with a huge variety of music so this is one not to be missed! 
+
+  Whether you want to have a dance or just sit and tap your toes, get ready for Christmas with this wonderful selection of music and festive favourites.
+ticket_url: "https://www.eventbrite.co.uk/e/melvin-beddow-big-band-christmas-dance-2026-tickets-2002039981478"
+ticket_price: "£18 online, £20 on the door"
 published: true
